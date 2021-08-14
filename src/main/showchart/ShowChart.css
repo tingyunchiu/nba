@@ -1,0 +1,7 @@
+.showchart {
+  box-sizing: border-box;
+  padding:  30px;
+  width:  100%;
+  display: flex;
+  justify-content: flex-end;
+}

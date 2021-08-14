@@ -1,0 +1,18 @@
+.search {
+  box-sizing: border-box;
+  padding:  10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+  flex-wrap: wrap;
+  width:  100%;
+}
+.container{
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+}
+.item{
+  margin-right: 20px;
+  margin-left: 20px;
+}
