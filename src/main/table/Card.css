@@ -1,0 +1,29 @@
+.cardcontainer{
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+.card {
+	box-sizing: border-box;
+	width: 600px;
+}
+.name{
+	background-color: #008680;
+	color: #e0e0e0;
+	padding: 20px;
+}
+.team{
+	background-color: #29b7af;
+	padding: 10px;
+}
+.detailcontainer{
+	display: flex;
+	justify-content: flex-start;
+ 	align-items: center;
+}
+.col{
+	color: #ff7043;
+	padding: 5px;
+}

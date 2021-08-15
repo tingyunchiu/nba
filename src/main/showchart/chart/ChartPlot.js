@@ -9,6 +9,8 @@ import {
   ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
 
+import './ChartPlot.css';
+
 function ChartPlot() {
   const chartData = []
   for (const [key, value] of teamSize) {
@@ -19,19 +21,22 @@ function ChartPlot() {
   chartData.sort((firstItem, secondItem) => secondItem.size - firstItem.size);
 
   return (
-    <Paper>
-      <Chart
+    <div className="chartpaper">
+      <Paper>
+        <Chart
           data={chartData}
-      >
-        <ArgumentAxis />
-        <ValueAxis max={15} />
-        <BarSeries
-          valueField="size"
-          argumentField="team"
-        />
-        <Title text="Team with less than 15 players" />
-      </Chart>
-    </Paper>
+        >
+          <ArgumentAxis />
+          <ValueAxis max={15} />
+          <BarSeries
+            valueField="size"
+            argumentField="team"
+            color="#c63f17"
+          />
+          <Title text="Team with less than 15 players" />
+        </Chart>
+      </Paper>
+    </div>
   );
 }
 

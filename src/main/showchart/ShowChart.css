@@ -1,7 +1,11 @@
-.showchart {
+.showchart{
   box-sizing: border-box;
   padding:  30px;
-  width:  100%;
   display: flex;
   justify-content: flex-end;
+  width:  100%;
+}
+.modal {
+  top: '50%';
+  left: '50%';
 }

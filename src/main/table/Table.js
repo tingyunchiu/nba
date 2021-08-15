@@ -1,17 +1,41 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import Link from "@material-ui/core/Link";
-
+import { FormControlLabel, IconButton } from "@material-ui/core";
+import InfoIcon from '@material-ui/icons/Info';
 import './Table.css'
+
 function Table({displayData}) {
+  const Info = ({ index }) => {
+    const handleEditClick = () => {
+      window.open("/player/" + index.replaceAll(' ', '_'), "_blank")
+    };
+
+    return (
+      <FormControlLabel
+        control={
+          <IconButton
+            color="secondary"
+            aria-label="add an alarm"
+            onClick={handleEditClick}
+          >
+            <InfoIcon style={{ color: "#2ab8b0"}} />
+          </IconButton>
+        }
+      />
+  );
+};
   const columns= []
   const col = ['Team', 'Name', 'Games', 'Points', 'Rebounds', 'Assists', 'Steals', 'Blocks']
   col.forEach(
-    item => {columns.push({field: item, headerName: item,  width: 180, editable: false})})
-  columns.push({field: 'Details', headerName: 'Details',  width: 180, editable: false,
-    renderCell: (params) => (
-      <Link href="#" onClick={() => window.open("PlayerCard.js", player = {params.value})}>More</Link>
-    )
+    item => {columns.push({field: item, headerName: item, width: 180, editable: false})})
+  columns.push({field: 'Details', headerName: 'Details', width: 180, editable: false,
+    renderCell: (params) => {
+        return (
+          <div>
+            <Info index={params.row.id} />
+          </div>
+        );
+    }
   })
 
   const rows = []
@@ -32,15 +56,17 @@ function Table({displayData}) {
   return (
     <div className="table">
       <div style={{ height: 500, width: '100%' }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={15}
-          rowsPerPageOptions={[15]}
-        />
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            pageSize={15}
+            rowsPerPageOptions={[15]}
+          />
       </div>
     </div>
   );
 }
 
 export default Table;
+
+

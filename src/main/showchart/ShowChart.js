@@ -1,6 +1,7 @@
 import React from 'react';
 import ChartPlot from './chart/ChartPlot.js';
 import Modal from '@material-ui/core/Modal';
+import { Button } from '@material-ui/core';
 import './ShowChart.css';
 
 function ShowChart() {
@@ -16,10 +17,11 @@ function ShowChart() {
 
   return (
     <div className="showchart">
-      <button type="button" onClick={handleOpen}>
+      <Button style={{backgroundColor: "#ff7043"}} variant="contained" onClick={handleOpen}>
         Open Modal
-      </button>
+      </Button>
       <Modal
+        className="modal"
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"

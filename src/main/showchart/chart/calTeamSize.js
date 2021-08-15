@@ -3,10 +3,10 @@ import { players } from '../../../players.js';
 const teamSize = new Map();
 
 players.forEach(item => {
-	if (teamSize.get(item.team_name) === undefined){
-		teamSize.set(item.team_name, 1);
+	if (teamSize.get(item.team_acronym) === undefined){
+		teamSize.set(item.team_acronym, 1);
 	}else {
-		teamSize.set(item.team_name, teamSize.get(item.team_name) +1)
+		teamSize.set(item.team_acronym, teamSize.get(item.team_acronym) +1)
 	}
 })
 

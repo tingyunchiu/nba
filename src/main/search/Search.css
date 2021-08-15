@@ -6,11 +6,13 @@
   align-items: top;
   flex-wrap: wrap;
   width:  100%;
+  background-color: #2ab8b0
 }
 .container{
   display: flex;
   justify-content: flex-start;
   align-items:center;
+  margin-left: 20px;
 }
 .item{
   margin-right: 20px;

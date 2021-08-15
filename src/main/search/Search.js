@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { Button } from '@material-ui/core';
 
 import './Search.css';
 
@@ -48,9 +49,9 @@ function Search({ searchingTeam, searchingPlayer}) {
         <TextField id="standard-basic" onChange={handleChangePlayer}/>
       </div>
       <div className="container">
-        <button type="button" onClick={clickedSearch}>
+        <Button style={{backgroundColor: "#e0e0e0"}} variant="contained" onClick={clickedSearch}>
           Search
-        </button>
+        </Button>
       </div>
     </div>
   );

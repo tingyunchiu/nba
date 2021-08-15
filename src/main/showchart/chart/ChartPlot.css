@@ -1,0 +1,10 @@
+.chartpaper {
+  width:  80%;
+}
+@media (max-width: 600px) {
+  .chartpaper {
+    width: 300px;
+    height: 100px;
+  }
+}
+
