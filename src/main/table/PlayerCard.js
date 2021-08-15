@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { players } from '../../players.js';
-import './Card.css'
+import './PlayerCard.css'
 
 function PlayerCard() {
   const index = useParams();
