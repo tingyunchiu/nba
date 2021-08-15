@@ -30,7 +30,7 @@ function Search({ searchingTeam, searchingPlayer}) {
     <div className="search">
       <div className="container">
         <h2 className="item">Team: </h2>
-        <FormControl>
+        <FormControl size="small">
           <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -46,7 +46,7 @@ function Search({ searchingTeam, searchingPlayer}) {
       </div>
       <div className="container">
         <h2 className="item">Player's Name: </h2>
-        <TextField id="standard-basic" onChange={handleChangePlayer}/>
+        <TextField className="item" id="standard-basic" onChange={handleChangePlayer}/>
       </div>
       <div className="container">
         <Button style={{backgroundColor: "#e0e0e0"}} variant="contained" onClick={clickedSearch}>

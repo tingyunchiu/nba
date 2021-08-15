@@ -9,10 +9,13 @@
   background-color: #2ab8b0
 }
 .container{
+  box-sizing: border-box;
+  max-width:  100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items:center;
-  margin-left: 20px;
+  padding: 20px;
 }
 .item{
   margin-right: 20px;
