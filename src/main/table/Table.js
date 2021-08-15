@@ -27,8 +27,13 @@ function Table({displayData}) {
   const columns= []
   const col = ['Team', 'Name', 'Games', 'Points', 'Rebounds', 'Assists', 'Steals', 'Blocks']
   col.forEach(
-    item => {columns.push({field: item, headerName: item, width: 180, editable: false})})
-  columns.push({field: 'Details', headerName: 'Details', width: 180, editable: false,
+    item => {
+      if (item === 'Team' || item === 'Name'){
+        columns.push({field: item, headerName: item, width: 160, editable: false})
+      }
+      columns.push({field: item, headerName: item, width: 130, editable: false})
+    })
+  columns.push({field: 'Details', headerName: 'Details', width: 150, editable: false,
     renderCell: (params) => {
         return (
           <div>
@@ -52,7 +57,7 @@ function Table({displayData}) {
     Details: player
   })}
   )
-
+  rows.sort((a, b) => b.Points - a.Points);
   return (
     <div className="table">
       <div style={{ height: 500, width: '100%' }}>
