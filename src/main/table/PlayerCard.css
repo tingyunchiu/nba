@@ -7,21 +7,24 @@
 }
 .card {
 	box-sizing: border-box;
-	width: 600px;
+	width: 100%;
 }
 .name{
 	background-color: #008680;
 	color: #e0e0e0;
 	padding: 20px;
+	word-wrap: break-word;
 }
 .team{
 	background-color: #29b7af;
 	padding: 10px;
+	word-wrap: break-word;
 }
 .detailcontainer{
 	display: flex;
 	justify-content: flex-start;
  	align-items: center;
+ 	flex-wrap: wrap;
 }
 .col{
 	color: #ff7043;

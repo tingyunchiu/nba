@@ -25,29 +25,30 @@ function Table({displayData}) {
   );
 };
   const columns= []
-  const col = ['Team', 'Name', 'Games', 'Points', 'Rebounds', 'Assists', 'Steals', 'Blocks']
+  const col = ['Name', 'Team', 'Details','Games', 'Points', 'Rebounds', 'Assists', 'Steals', 'Blocks']
   col.forEach(
     item => {
-      if (item === 'Team' || item === 'Name'){
+      if (item === 'Name' || item === 'Team'){
         columns.push({field: item, headerName: item, width: 160, editable: false})
+      } else if(item === 'Details') {
+        columns.push({field: 'Details', headerName: 'Details', width: 130, editable: false,
+          renderCell: (params) => {
+            return (
+              <div>
+                <Info index={params.row.id} />
+              </div>
+            );
+          }
+        })
       }
       columns.push({field: item, headerName: item, width: 130, editable: false})
     })
-  columns.push({field: 'Details', headerName: 'Details', width: 150, editable: false,
-    renderCell: (params) => {
-        return (
-          <div>
-            <Info index={params.row.id} />
-          </div>
-        );
-    }
-  })
 
   const rows = []
   displayData.forEach(player => {rows.push({
     id: player.name,
-    Team: player.team_name,
     Name: player.name,
+    Team: player.team_name,
     Games: player.games_played,
     Points: player.points_per_game,
     Rebounds: player.rebounds_per_game,

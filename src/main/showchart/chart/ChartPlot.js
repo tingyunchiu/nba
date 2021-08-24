@@ -11,6 +11,9 @@ import {
 
 import './ChartPlot.css';
 
+const titleStyle = { fontSize: '16px' };
+const TitleText = props => <Title.Text {...props} style={titleStyle} />;
+
 function ChartPlot() {
   const chartData = []
   for (const [key, value] of teamSize) {
@@ -35,7 +38,9 @@ function ChartPlot() {
             argumentField="team"
             color="#c63f17"
           />
-          <Title text="Team with less than 15 players" position ='bottom'/>
+          <Title text="Team with less than 15 players"
+            textComponent={TitleText}
+          />
         </Chart>
       </Paper>
     </div>
